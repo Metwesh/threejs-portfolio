@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "jsx-a11y"
+  ],
+  "ignorePatterns": [
+    "dist"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "no-template-curly-in-string": "warn",
+    "no-duplicate-imports": "warn",
+    "space-infix-ops": "warn",
+    "use-isnan": "error",
+    "no-irregular-whitespace": "error",
+    "no-invalid-regexp": "error",
+    "no-eval": "error",
+    "react/react-in-jsx-scope": "off",
+    // Eslint doesn't like React three fiber properties and this is a workaround, will use TSC's type checking for safety
+    "react/no-unknown-property": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "no-unused-vars": "off",
+    "prefer-const": "warn",
+    "no-console": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ]
+  }
+}
