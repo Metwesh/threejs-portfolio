@@ -13,6 +13,8 @@ Here, you'll find a collection of projects that I've worked on. Each project inc
 ## Skills
 
 - Programming Languages:
+  - HTML5
+  - CSS3
   - TypeScript
   - JavaScript
   - PHP
@@ -27,12 +29,13 @@ Here, you'll find a collection of projects that I've worked on. Each project inc
   - Tailwind
   - Threejs
   - Tanstack/React-Query
+  - React-Testing-Library
+  - Vite
+  - Vitest
   - Axios
   - Nodejs
   - Express
   - Jest
-  - React-Testing-Library
-  - Vitest
 
 ## Experience
 
