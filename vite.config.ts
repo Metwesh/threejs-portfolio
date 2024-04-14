@@ -3,8 +3,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: "/threejs-portfolio/",
+export default defineConfig(({ mode }) => ({
+  base: mode === "development" ? undefined : "/threejs-portfolio/",
   plugins: [
     react(),
     VitePWA({
@@ -14,10 +14,10 @@ export default defineConfig({
         "/favicons/favicon.ico",
         "/favicons/favicon.svg",
         "/favicons/apple-touch-icon-180x180.png",
-        "/favicons/maskable-icon-512x512.svg",
-        "/favicons/pwa-64x64.svg",
-        "/favicons/pwa-192x192.svg",
-        "/favicons/pwa-512x512.svg",
+        "/favicons/maskable-icon-512x512.png",
+        "/favicons/pwa-64x64.png",
+        "/favicons/pwa-192x192.png",
+        "/favicons/pwa-512x512.png",
       ],
       manifest: {
         name: "Metwesh | Portfolio",
@@ -61,5 +61,4 @@ export default defineConfig({
       selfDestroying: true,
     }),
   ],
-});
-
+}));

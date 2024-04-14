@@ -10,6 +10,7 @@ type FormKeys = "name" | "email" | "message";
 
 type RequestState = "idle" | "loading" | "success" | "error";
 
+// TODO: Add validation and error handling
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<{ [key in FormKeys]: string }>({
@@ -19,11 +20,12 @@ export default function ContactForm() {
   });
 
   const [formErrors, setFormErrors] = useState<{
-    [key in FormKeys]: false | string;
+    [key in FormKeys & "request"]: false | string;
   }>({
     name: false,
     email: false,
     message: false,
+    request: false,
   });
 
   const [requestState, setRequestState] = useState<RequestState>("idle");

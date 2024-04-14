@@ -3,8 +3,6 @@ import { Variants } from "framer-motion";
 type AnimationDirection = "left" | "right" | "up" | "down";
 type AnimationType = "decay" | "spring" | "keyframes" | "tween" | "inertia";
 
-// TODO: Make objects instead of serial variables
-
 export const textVariant = (delay?: number): Variants => {
   return {
     hidden: {
@@ -23,12 +21,11 @@ export const textVariant = (delay?: number): Variants => {
   };
 };
 
-
 export const fadeIn = (
   direction: AnimationDirection | undefined,
-  type:  AnimationType | undefined,
+  type: AnimationType | undefined,
   delay: number,
-  duration: number
+  duration: number,
 ): Variants => {
   return {
     hidden: {
@@ -71,9 +68,9 @@ export const zoomIn = (delay: number, duration: number): Variants => {
 
 export const slideIn = (
   direction: AnimationDirection,
-  type:  "decay" | "spring" | "keyframes" | "tween" | "inertia",
+  type: "decay" | "spring" | "keyframes" | "tween" | "inertia",
   delay: number,
-  duration: number
+  duration: number,
 ): Variants => {
   return {
     hidden: {
@@ -93,7 +90,10 @@ export const slideIn = (
   };
 };
 
-export const staggerContainer = (staggerChildren?: number, delayChildren?: number): Variants => {
+export const staggerContainer = (
+  staggerChildren?: number,
+  delayChildren?: number,
+): Variants => {
   return {
     hidden: {},
     show: {
@@ -103,4 +103,25 @@ export const staggerContainer = (staggerChildren?: number, delayChildren?: numbe
       },
     },
   };
+};
+
+export const subMenuAnimate: Variants = {
+  enter: {
+    opacity: 1,
+    translateX: 0,
+    transition: {
+      duration: 0.25,
+    },
+    display: "block",
+  },
+  exit: {
+    opacity: 0,
+    translateX: 100,
+    transition: {
+      duration: 0.25,
+    },
+    transitionEnd: {
+      display: "none",
+    },
+  },
 };

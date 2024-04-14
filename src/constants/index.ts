@@ -1,21 +1,10 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  threejs,
+  // blockService,
+  // gearService,
+  cubeService,
+  icosahedronService,
+  origamiFlowerService,
+  ringService,
   act,
   sideupWhite,
   sideup,
@@ -29,6 +18,48 @@ import {
   linkedIn,
   githubSquare,
   resumeIcon,
+  bachelorsDegree,
+  completeWebDev,
+  seniorWebDev,
+  cLanguage,
+  algorithms,
+  ossa,
+  cisa,
+  jsCert,
+  HTML5,
+  CSS3,
+  JavaScript,
+  TypeScript,
+  SASS,
+  BootStrap,
+  React,
+  Angular,
+  NodeJS,
+  Express,
+  PHP,
+  C,
+  Python,
+  Serverless,
+  RESTfulAPIs,
+  MachineLearning,
+  ArtificialIntelligence,
+  DataStructures,
+  Algorithms,
+  MySQL,
+  PostgreSQL,
+  MongoDB,
+  Redis,
+  Docker,
+  Git,
+  Github,
+  AWS,
+  Azure,
+  GoogleCloud,
+  Heroku,
+  Bash,
+  CICD,
+  Figma,
+  Threejs,
 } from "../assets";
 
 const navLinks = [
@@ -47,94 +78,181 @@ const navLinks = [
 ];
 
 const personalDescription = `
-        As a seasoned Fullstack Engineer based in Cairo, I bring extensive
-        experience in leading frontend and backend development projects,
-        prioritizing user-centric design and seamless integration. Throughout my
-        journey at SideUp, advancing from Frontend Engineer to Senior Frontend
-        Engineer, I've demonstrated leadership by mentoring peers, conducting
-        thorough code reviews, and driving projects to success. Notably, my
-        pivotal role in developing a B2C shipping dashboard underscored my
-        proficiency in React, TypeScript, and Bootstrap, aligning closely with
-        user needs and market trends. My passion for software development shines
-        through my proactive pursuit of new technologies, evidenced by my
-        completion of various courses and certifications. I excel in quickly
-        learning and adapting to new environments, ensuring I remain at the
-        forefront of innovation and deliver excellence in every project.`;
+As a seasoned Fullstack Engineer based in Cairo, I bring extensive
+experience in leading frontend and backend development projects,
+prioritizing user-centric design and seamless integration. Throughout my
+journey at SideUp, advancing from Frontend Engineer to Senior Frontend
+Engineer, I've demonstrated leadership by mentoring peers, conducting
+thorough code reviews, and driving projects to success. Notably, my
+pivotal role in developing a B2C shipping dashboard underscored my
+proficiency in React, TypeScript, and Bootstrap, aligning closely with
+user needs and market trends. My passion for software development shines
+through my proactive pursuit of new technologies, evidenced by my
+completion of various courses and certifications. I excel in quickly
+learning and adapting to new environments, ensuring I remain at the
+forefront of innovation and deliver excellence in every project.`;
 
-// TODO: Look for new webp pictures
 const services = [
   {
     title: "Fullstack Developer",
-    icon: web,
+    icon: ringService,
   },
   {
     title: "Webapp Developer",
-    icon: mobile,
+    icon: origamiFlowerService,
   },
   {
     title: "Frontend Developer",
-    icon: creator,
+    icon: icosahedronService,
   },
   {
     title: "Backend Developer",
-    icon: backend,
+    icon: cubeService,
   },
 ];
 
-// TODO: Finish
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    icon: HTML5,
+    name: "HTML5",
   },
   {
-    name: "CSS 3",
-    icon: css,
+    icon: CSS3,
+    name: "CSS3",
   },
   {
+    icon: JavaScript,
     name: "JavaScript",
-    icon: javascript,
   },
   {
+    icon: TypeScript,
     name: "TypeScript",
-    icon: typescript,
   },
   {
-    name: "React JS",
-    icon: reactjs,
+    icon: SASS,
+    name: "SASS",
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    icon: BootStrap,
+    name: "BootStrap",
   },
   {
-    name: "Tailwind CSS",
-    icon: tailwind,
+    icon: React,
+    name: "React",
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    icon: Angular,
+    name: "Angular",
   },
   {
+    icon: Figma,
+    name: "Figma",
+  },
+  {
+    icon: Threejs,
+    name: "Threejs",
+  },
+  {
+    icon: NodeJS,
+    name: "NodeJS",
+  },
+  {
+    icon: Express,
+    name: "Express",
+  },
+  {
+    icon: PHP,
+    name: "PHP",
+  },
+  {
+    icon: C,
+    name: "C",
+  },
+  {
+    icon: Python,
+    name: "Python",
+  },
+  {
+    icon: Serverless,
+    name: "Serverless",
+  },
+  {
+    icon: RESTfulAPIs,
+    name: "RESTfulAPIs",
+  },
+  {
+    icon: MachineLearning,
+    name: "Machine Learning",
+    wip: true,
+  },
+  {
+    icon: ArtificialIntelligence,
+    name: "Artificial Intelligence",
+    wip: true,
+  },
+  {
+    icon: DataStructures,
+    name: "Data Structures",
+  },
+  {
+    icon: Algorithms,
+    name: "Algorithms",
+  },
+  {
+    icon: MySQL,
+    name: "MySQL",
+  },
+  {
+    icon: PostgreSQL,
+    name: "PostgreSQL",
+  },
+  {
+    icon: MongoDB,
     name: "MongoDB",
-    icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
+    icon: Redis,
+    name: "Redis",
   },
   {
-    name: "git",
-    icon: git,
+    icon: Docker,
+    name: "Docker",
   },
   {
-    name: "figma",
-    icon: figma,
+    icon: Git,
+    name: "Git",
   },
   {
-    name: "docker",
-    icon: docker,
+    icon: Github,
+    name: "GitHub",
   },
+  {
+    icon: AWS,
+    name: "AWS",
+    wip: true,
+  },
+  {
+    icon: Azure,
+    name: "Azure",
+    wip: true,
+  },
+  {
+    icon: GoogleCloud,
+    name: "Google Cloud",
+    wip: true,
+  },
+  {
+    icon: Heroku,
+    name: "Heroku",
+  },
+  {
+    icon: Bash,
+    name: "Bash",
+  },
+  {
+    icon: CICD,
+    name: "CICD",
+    },
 ];
 
 const experiences = [
@@ -145,16 +263,26 @@ const experiences = [
     iconBg: "#383E56",
     date: "Dec 2023 - Present",
     points: [
-      "Led and mentored a team of junior frontend engineers, providing guidance, delegating tasks, and fostering a collaborative work environment conducive to skill development and productivity.",
-      "Implemented and facilitated code reviews to ensure adherence to coding standards, enhance code quality, and promote best practices within the team.",
-      "Actively participated in technical recruitment processes, including conducting technical assessments and reviews, to evaluate candidates' skills and suitability for the team.",
-      "Played a vital role with the product team in the decision-making process regarding the direction of the dashboard, providing valuable insights and recommendations to ensure alignment with user needs, market trends, and business objectives.",
-      "Collaborated with Quality Control (QC) team to write comprehensive unit tests for the dashboard application, ensuring robust code quality and reliability.",
-      "Demonstrated a hands-on approach to coding, tackling complex features and challenges while prioritizing efficient distribution of tasks within the team.",
-      "Played a key role in maintaining and enhancing the overall codebase by emphasizing the importance of code quality, scalability, and maintainability in all development efforts.",
-      "Acted as a subject matter expert within the team, providing technical guidance, resolving technical roadblocks, and fostering a culture of continuous learning and improvement.",
-      "Engaged in regular communication with stakeholders to gather requirements, provide updates on project progress, and address any concerns or feedback related my team’s tasks.",
-      "Proactively identified areas for process improvement and implemented initiatives to streamline development workflows, enhance productivity, and optimize code efficiency.",
+      {
+        title: "Led and mentored junior engineers",
+        subtitle:
+          "Cultivated a collaborative environment, fostering skill development and productivity.",
+      },
+      {
+        title: "Hands-on coding leadership",
+        subtitle:
+          "Prioritized efficient task distribution, tackled complex features, ensuring robust code quality.",
+      },
+      {
+        title: "Stakeholder collaboration",
+        subtitle:
+          "Provided valuable insights, aligning dashboard direction with user needs and business objectives.",
+      },
+      {
+        title: "Process optimization",
+        subtitle:
+          "Implemented initiatives to streamline workflows, enhance productivity, and ensure code efficiency and reliability.",
+      },
     ],
   },
   {
@@ -164,17 +292,26 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Feb 2023 - Dec 2023",
     points: [
-      "Developed and maintained the company's newest B2C shipping dashboard, taking full responsibility for its development, and ensuring its efficient and reliable operation.",
-      "Spearheaded the development of the shipping dashboard from the ground up using React, TypeScript, and Bootstrap for styling.",
-      "Utilized Vite as the build tool and Tanstack query as the query state manager for the project.",
-      "Worked alongside UX designers to ensure that the dashboard's design was not only visually appealing but also optimized for user experience, promoting ease of use and improving overall user satisfaction.",
-      "Collaborated with the backend team to ensure that the frontend and backend systems were integrated seamlessly, resulting in a cohesive and efficient system that met all requirements and specifications.",
-      "Partnered with the QA team to conduct extensive testing and debugging, identifying and resolving bugs and inconsistencies to improve overall system stability and reliability.",
-      "Followed the agile development methodology and worked in sprints to ensure timely delivery of high-quality code.",
-      "Developed the dashboard as the sole frontend engineer on the team, successfully delivering the project on time and within budget without any external assistance.",
-      "Implemented responsive design techniques to ensure that the dashboard was accessible and usable across different devices and screen sizes.",
-      "Worked with the product team to gather and analyze user feedback, contributing to the development of new features and improvements to the dashboard.",
-      "Demonstrated the ability to quickly learn and become proficient in new technologies such as Next.js and Material UI, which were utilized to maintain the previous version of the dashboard while developing the current version.",
+      {
+        title: "Led frontend development",
+        subtitle:
+          "Spearheaded the creation of a cutting-edge B2C shipping dashboard using React, TypeScript, and Bootstrap, ensuring seamless integration with backend systems.",
+      },
+      {
+        title: "Ensured optimal UX/UI",
+        subtitle:
+          "Collaborated with UX designers to create an intuitive design, enhancing user satisfaction and usability.",
+      },
+      {
+        title: "Maintained system stability",
+        subtitle:
+          "Partnered with QA to conduct rigorous testing and debugging, ensuring high reliability and performance.",
+      },
+      {
+        title: "Adapted to new tech",
+        subtitle:
+          "Quickly mastered Next.js and Material UI to maintain and improve previous versions, demonstrating adeptness in learning new technologies.",
+      },
     ],
   },
   {
@@ -184,11 +321,26 @@ const experiences = [
     iconBg: "#383E56",
     date: "Feb 2022 - Feb 2023",
     points: [
-      "Worked as a system integrator for established hotel chains such as InterContinental Hotels Group (IHG), Marriott hotels group, and Wyndham Hotels & Resorts, installing and integrating various digital subsystems such as Door Lock Systems, Internet Protocol Television systems, and Point Of Sale systems.",
-      "Integrated these subsystems with the main hotel Property Management System, ensuring seamless communication and efficient operations.",
-      "Worked in an agile environment with a customer-facing team, collaborating closely with stakeholders to identify and prioritize requirements.",
-      "Troubleshot issues remotely by analyzing logs and error codes, ensuring prompt resolution of issues and minimizing downtime.",
-      "Successfully integrated Oracle's Opera Web Services for over 480 IHG hotels worldwide within a span of 4 months, demonstrating the ability to effectively manage large-scale projects with complex requirements.",
+      {
+        title: "System Integration Expertise",
+        subtitle:
+          "Integrated digital subsystems like Door Lock Systems, IPTV, and POS with Property Management Systems for renowned hotel chains, facilitating seamless operations.",
+      },
+      {
+        title: "Agile Collaboration",
+        subtitle:
+          "Collaborated in agile settings, prioritizing and addressing stakeholder requirements, ensuring effective communication and alignment.",
+      },
+      {
+        title: "Remote Troubleshooting",
+        subtitle:
+          "Analyzed logs and error codes to troubleshoot issues remotely, minimizing downtime and ensuring prompt issue resolution.",
+      },
+      {
+        title: "Project Coordination Expertise",
+        subtitle:
+          "Orchestrated the integration of Oracle's Opera Web Services for 480+ Intercontinental Holiday Inn Group (IHG) hotels globally within four months, demonstrating adeptness in coordinating complex projects with multiple stakeholders and ensuring timely execution.",
+      },
     ],
   },
 ];
@@ -479,27 +631,53 @@ const projects = [
   },
 ];
 
-// TODO: Finish
 const certificateDescription = `
-`;
+In my professional journey, I've acquired several key certifications,
+enhancing my skills and knowledge in software development. These
+credentials, from foundational to specialized courses, underscore my
+commitment to continuous learning and growth. They equip me to deliver
+high-quality solutions in diverse software projects.`;
 
-// TODO: Finish
 const certificates = [
   {
-    title: "WIP",
-    icon: web,
+    title: "Bachelor's degree",
+    icon: bachelorsDegree,
+    link: "/documents/English certificate.pdf",
   },
   {
-    title: "WIP",
-    icon: mobile,
+    title: "Complete Web Dev",
+    icon: completeWebDev,
+    link: "/documents/Certificate-of-completion-for-complete-web-developer-in-2020-zero-to-mastery.pdf",
   },
   {
-    title: "WIP",
-    icon: creator,
+    title: "Junior To Senior Web Dev",
+    icon: seniorWebDev,
+    link: "https://www.udemy.com/certificate/UC-ebbe19f2-8c53-4d44-9098-b7662a4954b3/",
   },
   {
-    title: "WIP",
-    icon: backend,
+    title: "C Language Course",
+    icon: cLanguage,
+    link: "https://www.udemy.com/certificate/UC-e3bbec7e-1d48-42f4-99ec-9cc0357d5575/",
+  },
+  {
+    title: "Algorithms & Data Structures",
+    icon: algorithms,
+    link: "https://www.udemy.com/certificate/UC-1ecabe2a-7108-4462-8ae5-09085e501c2d/",
+  },
+  {
+    title: "OSSA",
+    icon: ossa,
+    link: "/documents/OSSA.pdf",
+  },
+  {
+    title: "CISA",
+    icon: cisa,
+    link: "/documents/CISA.pdf",
+  },
+  {
+    title: "JS Cert",
+    icon: jsCert,
+    link: "https://www.codingame.com/certification/_qSkPD6K1GYUn4FIDBnGFg",
   },
 ];
 

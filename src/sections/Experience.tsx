@@ -50,7 +50,8 @@ export default function Experience() {
                     key={`experience-point-${index}`}
                     className="text-white-100 text-[14px] p-l-1 tracking-wider"
                   >
-                    {point}
+                    <strong>{`${point.title}: `}</strong>
+                    <span>{point.subtitle}</span>
                   </li>
                 ))}
               </ul> 

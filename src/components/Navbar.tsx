@@ -1,13 +1,16 @@
+import Hamburger from "./Hamburger";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import { logo, close, menu } from "../assets";
+import { logo } from "../assets";
 import { navLinks } from "../constants";
 import { styles } from "../styles";
+import { subMenuAnimate } from "../utilities/motion";
 
 export default function Navbar() {
   const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
     <nav
@@ -43,36 +46,32 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
-          {/* TODO: Add my own implementation for this hamburger menu */}
-          <img
-            src={toggle ? close : menu}
-            alt="Menu"
-            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-            role="button"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle((prev) => !prev)}
-            onKeyDown={(e) =>
-              e.key === "Space" || e.key === "Enter"
-                ? setToggle((prev) => !prev)
-                : null
-            }
+          <Hamburger
+            onButtonClick={() => setMenuIsOpen(!menuIsOpen)}
+            active={menuIsOpen}
           />
-          <div
+          <motion.div
+            initial="exit"
+            animate={menuIsOpen ? "enter" : "exit"}
+            variants={subMenuAnimate}
             className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
+              !menuIsOpen ? "hidden" : "flex"
+            } bg-tertiary border-2 border-solid border-secondary menu-shadow absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
           >
-            <ul className="list-none flex flex-col justify-end items-start gap-4">
+            <ul className="w-full max-h-full list-none flex flex-col justify-end items-start gap-1">
               {navLinks.map((link, index) => (
-                <li key={`nav-link-${link.id}-${index}`}>
+                <li
+                  key={`nav-link-${link.id}-${index}`}
+                  className="flex justify-center items-center w-full h-full"
+                >
                   <a
                     href={`#${link.id}`}
                     className={`${
                       active === link.title ? "text-white" : "text-secondary"
-                    } font-poppins font-medium cursor-pointer text-[16px]`}
+                    } w-full hover:text-white py-4 ps-4 pe-8 font-poppins font-medium cursor-pointer text-[16px]`}
                     onClick={() => {
                       setActive(link.title);
-                      setToggle(false);
+                      setMenuIsOpen(false);
                     }}
                   >
                     {link.title}
@@ -80,7 +79,7 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
     </nav>

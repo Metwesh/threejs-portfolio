@@ -1,0 +1,62 @@
+:root {
+  --hamburger-width: 1.75rem;
+  --hamburger-gap: 6px;
+  --hamburger-bar-height: 3px;
+}
+
+#Hamburger-Menu {
+  margin-inline-end: -0.75rem;
+}
+
+.hamburger {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--hamburger-gap);
+  padding: 0.75rem;
+}
+
+.hamburger > span {
+  display: block;
+  width: var(--hamburger-width);
+  height: var(--hamburger-bar-height);
+  border-radius: 1.25px;
+  background-color: #f7fafc;
+  transition:
+    transform 350ms ease-in-out,
+    width 300ms ease-in-out 300ms,
+    opacity 300ms ease-in-out;
+}
+.hamburger > span:nth-child(2) {
+  max-width: 66.6%;
+  margin-inline-start: auto;
+}
+
+.hamburger.open {
+  transition:
+    transform 300ms ease-in-out 300ms,
+    width 300ms ease-in-out 300ms,
+    opacity 300ms ease-in-out 300ms;
+  transform: rotate(45deg);
+}
+.hamburger.open :nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+.hamburger.open :first-child,
+.hamburger.open :last-child {
+  transition: transform 300ms ease-in-out 300ms;
+}
+.hamburger.open :first-child {
+  transform: translateY(
+    calc(var(--hamburger-bar-height) + var(--hamburger-gap))
+  );
+}
+
+.hamburger.open :last-child {
+  transform: translateY(
+      calc(-1 * (var(--hamburger-bar-height) + var(--hamburger-gap)))
+    )
+    rotate(90deg);
+}

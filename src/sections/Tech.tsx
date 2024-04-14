@@ -1,18 +1,13 @@
 import SectionWrapper from "../container/SectionWrapper";
-import { technologies } from "../constants";
-import BallCanvas from "../components/canvases/BallCanvas";
+import TechCanvas from "../components/canvases/TechCanvas";
 
 export default function Tech() {
   return (
-    <SectionWrapper>
-      <div className="flex flex-row flex-wrap justify-center gap-10 mb-12">
-        {technologies.map((technology, index) => (
-          <div className="w-28 h-28 select-none" key={technology.name}>
-            <BallCanvas imgUrl={technology.icon} index={index} />
-            <h3 className="text-center text-white mt-2">{technology.name}</h3>
-          </div>
-        ))}
-      </div>
+    <SectionWrapper className="h-screen">
+      <TechCanvas />
+      <p className="mt-3 text-secondary text-[17px] max-w-7xl w-full leading-[30px] text-right">
+        List view is in my resume below
+      </p>
     </SectionWrapper>
   );
 }

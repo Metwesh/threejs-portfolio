@@ -1,10 +1,9 @@
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-
-import { styles } from "../styles";
+import { Tilt } from "react-tilt";
 import { personalDescription, services } from "../constants";
-import { fadeIn, textVariant } from "../utilities/motion";
 import SectionWrapper from "../container/SectionWrapper";
+import { styles } from "../styles";
+import { fadeIn, textVariant } from "../utilities/motion";
 
 export default function About() {
   return (
@@ -16,7 +15,9 @@ export default function About() {
       <motion.p
         variants={fadeIn(undefined, undefined, 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >{personalDescription}</motion.p>
+      >
+        {personalDescription}
+      </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (

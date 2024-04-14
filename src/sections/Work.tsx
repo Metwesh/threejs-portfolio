@@ -46,6 +46,7 @@ export default function Work() {
                 {"source_code_link" in project && "demo_link" in project ? (
                   <div className="absolute inset-0 flex justify-between m-3 card-img_hover">
                     <button
+                      title={`Visit ${project.name} demo`}
                       onClick={() => window.open(project.demo_link, "_blank")}
                       className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
                     >
@@ -56,6 +57,7 @@ export default function Work() {
                       />
                     </button>
                     <button
+                      title={`Visit ${project.name} repository`}
                       onClick={() =>
                         window.open(project.source_code_link, "_blank")
                       }
@@ -71,6 +73,7 @@ export default function Work() {
                 ) : "source_code_link" in project ? (
                   <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
                     <button
+                      title={`Visit ${project.name} repository`}
                       onClick={() =>
                         window.open(project.source_code_link, "_blank")
                       }

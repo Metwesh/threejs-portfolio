@@ -1,6 +1,5 @@
 import { PointMaterial, Points } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { random } from "maath";
 import { useRef } from "react";
 import {
   BufferGeometry,
@@ -9,6 +8,7 @@ import {
   Object3DEventMap,
   Points as PointsType,
 } from "three";
+import { generateRandomPoints } from "../../utilities/random";
 
 export default function Stars() {
   const pointsRef = useRef<
@@ -18,12 +18,6 @@ export default function Stars() {
       Object3DEventMap
     >
   >(null!);
-
-  function generateRandomPoints<T extends Float32Array | Float64Array>(
-    args: T
-  ): T {
-    return random.inSphere(args, { radius: 1.2 }) as T;
-  }
 
   // Needs to be a number divisible by 3
   const sphere = generateRandomPoints(new Float32Array(5001));

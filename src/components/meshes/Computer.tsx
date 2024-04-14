@@ -1,17 +1,30 @@
-import { OrbitControls, useGLTF } from "@react-three/drei";
-import { useRef } from "react";
+import { OrbitControls, useGLTF, useProgress } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
+import { useContext, useEffect, useRef } from "react";
 import { Mesh } from "three";
+import MobileContext from "../../contexts/MobileContext";
 
-export default function Computer(props: { isMobile: boolean }) {
+export default function Computer() {
+  const { camera } = useThree();
+  const { active } = useProgress();
+  const { isMobile } = useContext(MobileContext);
+
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
   const meshRef = useRef<Mesh>();
 
-  // TODO: Handle the instant loading of the model
+  useEffect(() => {
+    if (active && "fov" in camera && typeof camera.fov === "number") {
+      camera.fov = isMobile ? 30 : 25;
+      camera.updateProjectionMatrix();
+    }
+  }, [isMobile, active]);
 
   return (
     <>
       <OrbitControls
+        enableDamping
+        enablePan={false}
         enableZoom={false}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
@@ -30,8 +43,8 @@ export default function Computer(props: { isMobile: boolean }) {
         <primitive
           ref={meshRef}
           object={computer.scene}
-          scale={props.isMobile ? 0.65 : 0.75}
-          position={props.isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+          scale={isMobile ? 0.65 : 0.75}
+          position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
           rotation={[-0.01, -0.2, -0.1]}
         />
       </mesh>

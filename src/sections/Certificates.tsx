@@ -1,10 +1,9 @@
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-
-import { styles } from "../styles";
+import { Tilt } from "react-tilt";
 import { certificateDescription, certificates } from "../constants";
-import { fadeIn, textVariant } from "../utilities/motion";
 import SectionWrapper from "../container/SectionWrapper";
+import { styles } from "../styles";
+import { fadeIn, textVariant } from "../utilities/motion";
 
 export default function Certificates() {
   return (
@@ -33,17 +32,22 @@ export default function Certificates() {
           >
             <motion.div
               variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-              className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+              className="w-full cyan-pink-gradient p-[1px] rounded-[20px] shadow-card"
             >
-              <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
-                <img
-                  src={cert.icon}
-                  alt={cert.title}
-                  className="w-16 h-16 object-contain"
-                />
-                <h3 className="text-white text-[20px] font-bold text-center">
-                  {cert.title}
-                </h3>
+              <div>
+                <a
+                  className="bg-tertiary rounded-[20px] p-5 min-h-[280px] flex justify-evenly items-center flex-col"
+                  href={cert.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  title={cert.title}
+                >
+                  <img
+                    src={cert.icon}
+                    alt={cert.title}
+                    className="w-full h-full max-h-[154px] object-contain"
+                  />
+                </a>
               </div>
             </motion.div>
           </Tilt>
