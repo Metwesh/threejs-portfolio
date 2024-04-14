@@ -25,6 +25,14 @@ Here, you'll find a collection of projects that I've worked on. Each project inc
   - Express
   - Bootstrap
   - Tailwind
+  - Threejs
+  - Tanstack/React-Query
+  - Axios
+  - Nodejs
+  - Express
+  - Jest
+  - React-Testing-Library
+  - Vitest
 
 ## Experience
 
@@ -50,4 +58,4 @@ Here, you'll find a collection of projects that I've worked on. Each project inc
 
 Feel free to reach out to me for any inquiries, collaborations, or job opportunities. You can contact me through the form in [my portfolio](https://metwesh.github.io/threejs-portfolio/).
 
-Thank you for visiting my portfolio!
+Thank you for visiting & have a nice day!
