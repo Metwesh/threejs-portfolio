@@ -143,6 +143,7 @@ const technologies = [
   {
     icon: Angular,
     name: "Angular",
+    wip: true,
   },
   {
     icon: Figma,
@@ -171,6 +172,7 @@ const technologies = [
   {
     icon: Python,
     name: "Python",
+    wip:true,
   },
   {
     icon: Serverless,
@@ -251,7 +253,7 @@ const technologies = [
   },
   {
     icon: CICD,
-    name: "CICD",
+    name: "CI/CD",
     },
 ];
 

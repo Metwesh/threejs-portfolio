@@ -8,7 +8,7 @@ import { Tilt } from "react-tilt";
 
 export default function Work() {
   return (
-    <SectionWrapper id="work">
+    <SectionWrapper id="projects">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>My work</p>
         <p className={styles.sectionHeadText}>Projects.</p>

@@ -1,5 +1,5 @@
 import Hamburger from "./Hamburger";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -11,6 +11,16 @@ import { subMenuAnimate } from "../utilities/motion";
 export default function Navbar() {
   const [active, setActive] = useState("");
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  useEffect(() => {
+    const closeMenu = () => setMenuIsOpen(false);
+
+    document.addEventListener("click", closeMenu);
+
+    return () => {
+      document.removeEventListener("click", closeMenu);
+    };
+  }, []);
 
   return (
     <nav
@@ -47,7 +57,10 @@ export default function Navbar() {
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <Hamburger
-            onButtonClick={() => setMenuIsOpen(!menuIsOpen)}
+            onButtonClick={(e) => {
+              e.stopPropagation();
+              setMenuIsOpen(!menuIsOpen);
+            }}
             active={menuIsOpen}
           />
           <motion.div

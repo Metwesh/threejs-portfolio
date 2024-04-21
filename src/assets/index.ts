@@ -12,41 +12,43 @@ import origamiFlowerService from "./service-icons/origami-flower-service.webp";
 import ringService from "./service-icons/ring-service.webp";
 
 // Tech
-import HTML5 from "./technologies/html5.webp";
-import CSS3 from "./technologies/css3.webp";
-import JavaScript from "./technologies/javascript.webp";
-import TypeScript from "./technologies/typescript.webp";
-import SASS from "./technologies/sass.webp";
-import BootStrap from "./technologies/bootstrap.webp";
-import React from "./technologies/react.webp";
-import Angular from "./technologies/angular.webp";
-import NodeJS from "./technologies/nodejs.webp";
-import Express from "./technologies/express.webp";
-import PHP from "./technologies/php.webp";
-import C from "./technologies/C.webp";
-import Python from "./technologies/python.webp";
-import Serverless from "./technologies/serverless.webp";
-import RESTfulAPIs from "./technologies/rest-api.webp";
-import MachineLearning from "./technologies/machine-learning.webp";
-import Figma from "./technologies/Figma.webp";
-import Threejs from "./technologies/Threejs.webp";
-import ArtificialIntelligence from "./technologies/artificial-intelligence.webp";
-import DataStructures from "./technologies/data-structures.webp";
-import Algorithms from "./technologies/algorithms.webp";
-import MySQL from "./technologies/mysql.webp";
-import PostgreSQL from "./technologies/postgresql.webp";
-import MongoDB from "./technologies/mongodb.webp";
-import Redis from "./technologies/redis.webp";
-import Docker from "./technologies/docker.webp";
-import Git from "./technologies/git.webp";
-import Github from "./technologies/github.webp";
-import AWS from "./technologies/aws.webp";
-import Azure from "./technologies/azure.webp";
-import GoogleCloud from "./technologies/google-cloud.webp";
-import Heroku from "./technologies/heroku.webp";
-import Bash from "./technologies/bash.webp";
-import CICD from "./technologies/ci-cd.webp";
-import WIP from "./technologies/under-construction.webp";
+import HTML5 from "./technologies/HTML5.svg";
+import CSS3 from "./technologies/CSS3.svg";
+import JavaScript from "./technologies/JavaScript.svg";
+import TypeScript from "./technologies/TypeScript.svg";
+import SASS from "./technologies/SASS.svg";
+import BootStrap from "./technologies/Bootstrap.svg";
+import React from "./technologies/React.svg";
+import Angular from "./technologies/Angular.svg";
+import NodeJS from "./technologies/Node-js.svg";
+import Express from "./technologies/Express.svg";
+import PHP from "./technologies/PHP.svg";
+import C from "./technologies/C.svg";
+import Python from "./technologies/Python.svg";
+import Serverless from "./technologies/Serverless.svg";
+import RESTfulAPIs from "./technologies/RESTful-API.svg";
+import MachineLearning from "./technologies/Machine-Learning.svg";
+import Figma from "./technologies/Figma.svg";
+import Threejs from "./technologies/Three-js.svg";
+import ArtificialIntelligence from "./technologies/Artificial-Intelligence.svg";
+import DataStructures from "./technologies/Data-Structures.svg";
+import Algorithms from "./technologies/Algorithms.svg";
+import MySQL from "./technologies/MySQL.svg";
+import PostgreSQL from "./technologies/PostgreSQL.svg";
+import MongoDB from "./technologies/MongoDB.svg";
+import Redis from "./technologies/Redis.svg";
+import Docker from "./technologies/Docker.svg";
+import Git from "./technologies/Git.svg";
+import Github from "./technologies/GitHub.svg";
+import AWS from "./technologies/AWS.svg";
+import Azure from "./technologies/Azure.svg";
+import GoogleCloud from "./technologies/GCP.svg";
+import Heroku from "./technologies/Heroku.svg";
+import Bash from "./technologies/Bash.svg";
+import CICD from "./technologies/CI-CD.svg";
+// Extras
+import boxBg from "./technologies/Box-Bg.svg";
+import WIP from "./technologies/Under-Construction.svg";
 
 // Companies
 import act from "./companies/ACT.svg";
@@ -140,6 +142,7 @@ export {
   Heroku,
   Bash,
   CICD,
+  boxBg,
   WIP,
   Figma,
   Threejs,

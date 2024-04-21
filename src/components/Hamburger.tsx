@@ -1,6 +1,6 @@
 import "./Hamburger.css";
 export default function Hamburger(props: {
-  onButtonClick: () => void;
+  onButtonClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   active: boolean;
 }) {
   return (
