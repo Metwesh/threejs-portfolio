@@ -21,6 +21,8 @@ export default function Footer() {
             title={linkData.title}
             aria-label={linkData.title}
             href={linkData.link}
+            target="_blank"
+            rel="noreferrer"
           >
             <span className="lg:block hidden">{linkData.title}</span>
             <img
