@@ -109,7 +109,12 @@ export function TechCore() {
   });
 
   return (
-    <group ref={meshRef} position={[0, 0, 0]} scale={5}>
+    <group
+      ref={meshRef}
+      position={[0, 0, 0]}
+      scale={5}
+      onPointerEnter={(e) => e.stopPropagation()}
+    >
       <mesh geometry={(nodes.M as THREE.Mesh)?.geometry}>
         <primitive attach="material" object={decalMaterial} />
       </mesh>

@@ -2,31 +2,51 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import ComputerCanvas from "../components/canvases/ComputerCanvas";
+import useTypewriter from "../hooks/useTypewriter";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
+import { useCallback, useState } from "react";
 
 export default function Hero() {
-  return (
-    <section className="relative w-full h-screen mx-auto">
-      <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
-      >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const typewriterText = useTypewriter(
+    ["Mohamed H. Aly", "Metwesh"],
+    isIntersecting,
+  );
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I&apos;m <span className="text-[#915eff]">Metwesh</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Self taught web & software developer
-          </p>
+  const handleIntersection = useCallback<(args: boolean) => void>(
+    setIsIntersecting,
+    [],
+  );
+
+  const ref = useIntersectionObserver(handleIntersection);
+
+  return (
+    <section ref={ref} className="relative w-full h-screen mx-auto">
+      <div
+        className={`${styles.paddingX} absolute inset-0 xs:top-[120px] top-[70px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
+      >
+        <div className="flex flex-row items-start gap-5 z-10">
+          <div className="flex flex-col justify-center items-center mt-5">
+            <div className="w-5 h-5 rounded-full bg-[#915eff]" />
+            <div className="w-1 sm:h-80 h-40 violet-gradient" />
+          </div>
+
+          <div>
+            <h1 className={`${styles.heroHeadText} text-white`}>
+              Hi, I&apos;m&nbsp;
+              <wbr />
+              <span className="text-[#915eff]">{typewriterText}</span>
+            </h1>
+            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+              Self taught web & software developer
+            </p>
+          </div>
         </div>
       </div>
 
       <ComputerCanvas />
 
-      <div className="absolute bottom-10 w-full flex justify-center items-center">
+      <div className="absolute xs:bottom-10 bottom-[64px] w-full flex justify-center items-center">
         <a href="#about" aria-label="Scroll to about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
             <motion.div

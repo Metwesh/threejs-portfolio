@@ -9,6 +9,7 @@ export default function Footer() {
       variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
+      viewport={{ once: true }}
       className={`${styles.padding} overflow-hidden flex justify-center items-center flex-wrap gap-10`}
     >
       {footerLinks.map((linkData, index) => (
