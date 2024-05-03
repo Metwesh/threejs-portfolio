@@ -14,6 +14,7 @@ import {
   faceDetectApp,
   taskHandlerApp,
   sideupDashboardV2,
+  amanDashboard,
   sideupDashboardV3,
   linkedIn,
   githubSquare,
@@ -172,7 +173,7 @@ const technologies = [
   {
     icon: Python,
     name: "Python",
-    wip:true,
+    wip: true,
   },
   {
     icon: Serverless,
@@ -254,13 +255,14 @@ const technologies = [
   {
     icon: CICD,
     name: "CI/CD",
-    },
+  },
 ];
 
 const experiences = [
   {
     title: "Senior Frontend Engineer",
     company_name: "SIDEUP",
+    link: "https://eg.sideup.co/",
     icon: sideupWhite,
     iconBg: "#383E56",
     date: "Dec 2023 - Present",
@@ -290,6 +292,7 @@ const experiences = [
   {
     title: "Frontend Engineer",
     company_name: "SIDEUP",
+    link: "https://eg.sideup.co/",
     icon: sideup,
     iconBg: "#E6DEDD",
     date: "Feb 2023 - Dec 2023",
@@ -319,6 +322,7 @@ const experiences = [
   {
     title: "Interface Specialist",
     company_name: "Advanced Computer Technologies (ACT)",
+    link: "https://www.act.eg/",
     icon: act,
     iconBg: "#383E56",
     date: "Feb 2022 - Feb 2023",
@@ -572,9 +576,49 @@ const projects = [
     image: sideupDashboardV2,
   },
   {
+    name: "Aman Accept Dashboard",
+    description:
+      "For my seventh project, a client, Aman, approached me to develop their improved payment dashboard. This dashboard provides real-time transaction data, enables easy tracking of payments, and offers analytics to help businesses understand revenue.",
+    tags: [
+      {
+        name: "React",
+        color: "light-blue",
+      },
+      {
+        name: "Bootstrap",
+        color: "purple",
+      },
+      {
+        name: "Axios",
+        color: "light-purple",
+      },
+      {
+        name: "React-Query",
+        color: "pink",
+      },
+      {
+        name: "Redux",
+        color: "dark-purple",
+      },
+      {
+        name: "React-Router",
+        color: "light-pink",
+      },
+      {
+        name: "Recharts",
+        color: "orange",
+      },
+      {
+        name: "i18n",
+        color: "blue",
+      },
+    ],
+    image: amanDashboard,
+  },
+  {
     name: "SIDEUP Dashboard v3",
     description:
-      "For my seventh project, I spearheaded SIDEUP's third iteration of the shipping dashboard, featuring similar functionalities as its predecessor but with additional features. Despite its visual overhaul, it had to be seamlessly integrated into the existing system, necessitating innovative solutions.",
+      "For my eighth project, I spearheaded SIDEUP's third iteration of the shipping dashboard, featuring similar functionalities as its predecessor but with additional features. Despite its visual overhaul, it had to be seamlessly integrated into the existing system, necessitating innovative solutions.",
     tags: [
       {
         name: "React",

@@ -62,6 +62,7 @@ import budgetApp from "./projects/Budget app.webp";
 import faceDetectApp from "./projects/Face-detect.webp";
 import taskHandlerApp from "./projects/Task-handler.webp";
 import sideupDashboardV2 from "./projects/SIDEUP-dashboard-V2.webp";
+import amanDashboard from "./projects/Aman-dashboard.webp";
 import sideupDashboardV3 from "./projects/SIDEUP-dashboard-V3.webp";
 
 // Certificates
@@ -98,6 +99,7 @@ export {
   faceDetectApp,
   taskHandlerApp,
   sideupDashboardV2,
+  amanDashboard,
   sideupDashboardV3,
   githubSquare,
   linkedIn,

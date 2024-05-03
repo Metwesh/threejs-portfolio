@@ -26,22 +26,32 @@ export default function Experience() {
               date={experience.date}
               iconStyle={{ backgroundColor: experience.iconBg }}
               icon={
-                <div className="flex justify-center items-center w-full h-full">
+                <a
+                  className="flex justify-center items-center w-full h-full"
+                  href={experience.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img
                     src={experience.icon}
                     alt={experience.company_name}
                     className="w-[80%] h-[80%] object-contain"
                   />
-                </div>
+                </a>
               }
             >
               <div>
                 <h3 className="text-white text-[24px] font-bold">
                   {experience.title}
                 </h3>
-                <p className="text-secondary text-[16px] font-semibold">
+                <a
+                  className="text-secondary text-[16px] font-semibold"
+                  href={experience.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {experience.company_name}
-                </p>
+                </a>
               </div>
 
               <ul className="mt-5 list-disc ml-5 space-y-2">
@@ -54,7 +64,7 @@ export default function Experience() {
                     <span>{point.subtitle}</span>
                   </li>
                 ))}
-              </ul> 
+              </ul>
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
