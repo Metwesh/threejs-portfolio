@@ -61,6 +61,7 @@ import {
   CICD,
   Figma,
   Threejs,
+  pythonDev,
 } from "../assets";
 
 const navLinks = [
@@ -513,7 +514,7 @@ const projects = [
     ],
     image: taskHandlerApp,
 
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Metwesh/task-handler",
   },
   {
     name: "SIDEUP Dashboard v2",
@@ -709,6 +710,11 @@ const certificates = [
     title: "Algorithms & Data Structures",
     icon: algorithms,
     link: "https://www.udemy.com/certificate/UC-1ecabe2a-7108-4462-8ae5-09085e501c2d/",
+  },
+  {
+    title: "Python Developer",
+    icon: pythonDev,
+    link: "https://www.udemy.com/certificate/UC-2cb10543-7b97-40aa-bd2e-6341de1b1970/",
   },
   {
     title: "OSSA",

@@ -71,6 +71,7 @@ import completeWebDev from "./certificates/Complete-web-developer-certification.
 import seniorWebDev from "./certificates/Udemy-certificate-ZTM-senior-web-developer.webp";
 import cLanguage from "./certificates/Udemy-certificate-C-programming.webp";
 import algorithms from "./certificates/Udemy-certificate-Algorithms+Data-structures.webp";
+import pythonDev from "./certificates/Udemy-certificate-Python-dev.webp"
 import ossa from "./certificates/OSSA.webp";
 import cisa from "./certificates/CISA.webp";
 import jsCert from "./certificates/JS-Certification.webp";
@@ -125,6 +126,7 @@ export {
   PHP,
   C,
   Python,
+  pythonDev,
   Serverless,
   RESTfulAPIs,
   MachineLearning,
