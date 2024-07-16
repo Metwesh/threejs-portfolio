@@ -688,12 +688,12 @@ const certificates = [
   {
     title: "Bachelor's degree",
     icon: bachelorsDegree,
-    link: "/documents/English certificate.pdf",
+    link: "/threejs-portfolio/documents/English certificate.pdf",
   },
   {
     title: "Complete Web Dev",
     icon: completeWebDev,
-    link: "/documents/Certificate-of-completion-for-complete-web-developer-in-2020-zero-to-mastery.pdf",
+    link: "/threejs-portfolio/documents/Certificate-of-completion-for-complete-web-developer-in-2020-zero-to-mastery.pdf",
   },
   {
     title: "Junior To Senior Web Dev",
@@ -718,12 +718,12 @@ const certificates = [
   {
     title: "OSSA",
     icon: ossa,
-    link: "/documents/OSSA.pdf",
+    link: "/threejs-portfolio/documents/OSSA.pdf",
   },
   {
     title: "CISA",
     icon: cisa,
-    link: "/documents/CISA.pdf",
+    link: "/threejs-portfolio/documents/CISA.pdf",
   },
   {
     title: "JS Cert",
@@ -745,7 +745,7 @@ const footerLinks = [
   },
   {
     title: "Download Resume",
-    link: "/documents/Mohamed%20H.%20Aly.pdf",
+    link: "/threejs-portfolio/documents/Mohamed%20H.%20Aly.pdf",
     icon: resumeIcon,
   },
 ];
