@@ -684,16 +684,18 @@ credentials, from foundational to specialized courses, underscore my
 commitment to continuous learning and growth. They equip me to deliver
 high-quality solutions in diverse software projects.`;
 
+const getBasePath = () => (import.meta.env.DEV ? "" : "/threejs-portfolio");
+
 const certificates = [
   {
     title: "Bachelor's degree",
     icon: bachelorsDegree,
-    link: "/threejs-portfolio/documents/English certificate.pdf",
+    link: `${getBasePath()}/documents/English certificate.pdf`,
   },
   {
     title: "Complete Web Dev",
     icon: completeWebDev,
-    link: "/threejs-portfolio/documents/Certificate-of-completion-for-complete-web-developer-in-2020-zero-to-mastery.pdf",
+    link: `${getBasePath()}/documents/Certificate-of-completion-for-complete-web-developer-in-2020-zero-to-mastery.pdf`,
   },
   {
     title: "Junior To Senior Web Dev",
@@ -718,12 +720,12 @@ const certificates = [
   {
     title: "OSSA",
     icon: ossa,
-    link: "/threejs-portfolio/documents/OSSA.pdf",
+    link: `${getBasePath()}/documents/OSSA.pdf`,
   },
   {
     title: "CISA",
     icon: cisa,
-    link: "/threejs-portfolio/documents/CISA.pdf",
+    link: `${getBasePath()}/documents/CISA.pdf`,
   },
   {
     title: "JS Cert",
@@ -745,7 +747,7 @@ const footerLinks = [
   },
   {
     title: "Download Resume",
-    link: "/threejs-portfolio/documents/Mohamed%20H.%20Aly.pdf",
+    link: `${getBasePath()}/documents/Mohamed%20H.%20Aly.pdf`,
     icon: resumeIcon,
   },
 ];
