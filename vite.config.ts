@@ -2,6 +2,9 @@ import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
+const getBasePath = (mode: string) =>
+  mode === "development" ? "" : "/threejs-portfolio";
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   base: mode === "development" ? undefined : "/threejs-portfolio/",
@@ -28,23 +31,28 @@ export default defineConfig(({ mode }) => ({
         scope: "/",
         icons: [
           {
-            src: "/favicons/pwa-192x192.png",
+            src: `${getBasePath(mode)}/favicons/pwa-64x64.png`,
+            sizes: "64x64",
+            type: "image/png",
+          },
+          {
+            src: `${getBasePath(mode)}/favicons/pwa-192x192.png`,
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "/favicons/pwa-512x512.png",
+            src: `${getBasePath(mode)}/favicons/pwa-512x512.png`,
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/favicons/pwa-512x512.png",
+            src: `${getBasePath(mode)}/favicons/pwa-512x512.png`,
             sizes: "512x512",
             type: "image/png",
             purpose: "any",
           },
           {
-            src: "/favicons/pwa-512x512.png",
+            src: `${getBasePath(mode)}/favicons/maskable-icon-512x512.png`,
             sizes: "512x512",
             type: "image/png",
             purpose: "maskable",
