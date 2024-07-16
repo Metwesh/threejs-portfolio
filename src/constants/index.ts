@@ -145,7 +145,6 @@ const technologies = [
   {
     icon: Angular,
     name: "Angular",
-    wip: true,
   },
   {
     icon: Figma,
@@ -746,7 +745,7 @@ const footerLinks = [
   },
   {
     title: "Download Resume",
-    link: "/documents/Mohamed H. Aly.pdf",
+    link: "/documents/Mohamed%20H.%20Aly.pdf",
     icon: resumeIcon,
   },
 ];

@@ -2,6 +2,7 @@
   "name": "threejs-portfolio",
   "private": true,
   "version": "0.1.0",
+  "homepage": "https://metwesh.github.io/threejs-portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
