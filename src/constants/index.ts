@@ -35,6 +35,10 @@ import {
   BootStrap,
   React,
   Angular,
+  NextJS,
+  Ionic,
+  Jira,
+  Firebase,
   NodeJS,
   Express,
   PHP,
@@ -62,6 +66,8 @@ import {
   Figma,
   Threejs,
   pythonDev,
+  beltoneHolding,
+  dartSpace,
 } from "../assets";
 
 const navLinks = [
@@ -145,6 +151,22 @@ const technologies = [
   {
     icon: Angular,
     name: "Angular",
+  },
+  {
+    icon: NextJS,
+    name: "NEXTJS",
+  },
+  {
+    icon: Jira,
+    name: "Jira",
+  },
+  {
+    icon: Firebase,
+    name: "Firebase",
+  },
+  {
+    icon: Ionic,
+    name: "Ionic",
   },
   {
     icon: Figma,
@@ -674,6 +696,66 @@ const projects = [
       },
     ],
     image: sideupDashboardV3,
+  },
+  {
+    name: "BELTONE Holding Company Site",
+    description:
+      "For my ninth project, a client, Beltone Holding, approached me to spearhead the development of their display website. Unlike a traditional dashboard, this website interfaced with their existing dashboard to streamline data entry and ensure dynamic content. Built with Next.js, it featured localization to cater to a diverse user base and had no static data.",
+    tags: [
+      {
+        name: "NextJS",
+        color: "gray-white",
+      },
+      {
+        name: "Bootstrap",
+        color: "purple",
+      },
+      {
+        name: "Axios",
+        color: "light-purple",
+      },
+      {
+        name: "SEO",
+        color: "light-orange",
+      },
+      {
+        name: "React-Router",
+        color: "light-pink",
+      },
+      {
+        name: "i18n",
+        color: "blue",
+      },
+    ],
+    image: beltoneHolding,
+  },
+  {
+    name: "D'Art Space Art Store",
+    description:
+      "For my tenth project, a client, D'Art Space, approached me to build their physical art store's e-commerce portal. It had to be cross-platform compatible, so I utilized Ionic's cross-platform functionality to cater to Web, iOS, and Android.",
+    tags: [
+      {
+        name: "Angular",
+        color: "pink",
+      },
+      {
+        name: "Ionic",
+        color: "light-blue",
+      },
+      {
+        name: "SASS",
+        color: "red",
+      },
+      {
+        name: "PWA",
+        color: "yellow",
+      },
+      {
+        name: "ChartJs",
+        color: "green",
+      },
+    ],
+    image: dartSpace,
   },
 ];
 

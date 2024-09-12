@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import CanvasLoader from "../CanvasLoader";
 import Computer from "../meshes/Computer";
 
-// TODO: Make full page loading & block scroll ?
 export default function ComputerCanvas() {
   return (
     <Canvas

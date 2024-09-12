@@ -333,6 +333,40 @@ canvas:active {
   -webkit-text-fill-color: transparent;
 }
 
+.gray-white-text-gradient {
+  background: #ffffff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #333333,
+    #ffffff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #333333,
+    #ffffff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light-orange-text-gradient {
+  background: #ffcccb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #ff6347,
+    #ffcccb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #ff6347,
+    #ffcccb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .menu-shadow {
   box-shadow: 0 2px 8px rgb(170 166 195 / 35%);
 }
