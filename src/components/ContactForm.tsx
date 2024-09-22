@@ -15,6 +15,7 @@ type RequestState = "idle" | "loading" | "success" | "error";
 
 // TODO: Add validation and error handling
 export default function ContactForm() {
+  const [clientName, setClientName] = useState("");
   const [formData, setFormData] = useState<{ [key in FormKeys]: string }>({
     name: "",
     email: "",
@@ -87,6 +88,7 @@ export default function ContactForm() {
       .then(
         () => {
           setRequestState("success");
+          setClientName(formData.name);
           setFormData({ name: "", email: "", message: "" });
           setFormErrors({
             name: false,
@@ -97,10 +99,15 @@ export default function ContactForm() {
         },
         () => {
           setRequestState("error");
+          setClientName("");
           setFormErrors((prev) => ({
             ...prev,
-            request: "Something went wrong",
+            request: "Something went wrong, please try again later",
           }));
+          setTimeout(() => {
+            setRequestState("idle");
+            setFormErrors((prev) => ({ ...prev, request: false }));
+          }, 5000);
         },
       );
   }
@@ -219,7 +226,7 @@ export default function ContactForm() {
                 />
               </svg>
               <p className="mt-4 text-secondary text-[17px] leading-[30px]">
-                {`Thank you for your message, ${formData.name}! I will get back to you shortly.`}
+                {`Thank you for your message, ${clientName}! I will get back to you shortly.`}
               </p>
             </motion.div>
           </div>
