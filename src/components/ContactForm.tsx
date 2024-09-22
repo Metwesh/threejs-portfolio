@@ -1,18 +1,20 @@
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import EarthCanvas from "../components/canvases/EarthCanvas";
 import SectionWrapper from "../container/SectionWrapper";
 import { styles } from "../styles";
 import { slideIn } from "../utilities/motion";
+import ErrorContainer from "./ErrorContainer";
 
 type FormKeys = "name" | "email" | "message";
+
+type FormErrors = FormKeys | "request";
 
 type RequestState = "idle" | "loading" | "success" | "error";
 
 // TODO: Add validation and error handling
 export default function ContactForm() {
-  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<{ [key in FormKeys]: string }>({
     name: "",
     email: "",
@@ -20,7 +22,7 @@ export default function ContactForm() {
   });
 
   const [formErrors, setFormErrors] = useState<{
-    [key in FormKeys & "request"]: false | string;
+    [key in FormErrors]: false | string;
   }>({
     name: false,
     email: false,
@@ -39,16 +41,30 @@ export default function ContactForm() {
   }
 
   function validateForm(): boolean {
-    if (!formData.name)
-      setFormErrors((prev) => ({ ...prev, name: "Name is required" }));
-    if (!formData.email)
-      setFormErrors((prev) => ({ ...prev, email: "Email is required" }));
-    else if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
-      setFormErrors((prev) => ({ ...prev, email: "Enter a valid email" }));
-    if (!formData.message)
-      setFormErrors((prev) => ({ ...prev, message: "Message is required" }));
+    const errors: { [Key in FormKeys]: string | false } = {
+      name: false,
+      email: false,
+      message: false,
+    };
 
-    return Object.values(formData).some((x) => !!x);
+    if (!formData.name) errors.name = "Name is required";
+    if (!formData.email) errors.email = "Email is required";
+    else if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
+      errors.email = "Enter a valid email";
+    if (!formData.message) errors.message = "Message is required";
+
+    const formIsValid = Object.values(errors).every((x) => !x);
+    setFormErrors((prev) => ({ ...prev, ...errors }));
+    if (!formIsValid) {
+      (
+        document.querySelector('*[data-has-error="true"]') as HTMLInputElement
+      )?.focus();
+      document.querySelector('*[data-has-error="true"]')?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+    return formIsValid;
   }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -63,7 +79,7 @@ export default function ContactForm() {
           from_name: formData.name,
           to_name: "Mohamed H. Aly",
           from_email: formData.email,
-          to_email: "mohamedh.aly@hotmail.com",
+          to_email: import.meta.env.VITE_PERSONAL_EMAIL,
           message: formData.message,
         },
         import.meta.env.VITE_PUBLIC_KEY,
@@ -72,71 +88,103 @@ export default function ContactForm() {
         () => {
           setRequestState("success");
           setFormData({ name: "", email: "", message: "" });
-          setFormErrors({ name: false, email: false, message: false });
+          setFormErrors({
+            name: false,
+            email: false,
+            message: false,
+            request: false,
+          });
         },
-        (error) => {
+        () => {
           setRequestState("error");
-          // alert("Something went wrong");
+          setFormErrors((prev) => ({
+            ...prev,
+            request: "Something went wrong",
+          }));
         },
       );
   }
 
+  const inputList = useMemo<
+    Array<{ value: FormKeys; label: string; textArea?: true }>
+  >(
+    () => [
+      { value: "name", label: "Name" },
+      { value: "email", label: "Email" },
+      { value: "message", label: "Message", textArea: true },
+    ],
+    [],
+  );
+
   return (
     <SectionWrapper id="contact">
-      <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+      <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+          className="flex-[0.75] bg-black-100 p-8 rounded-2xl overflow-hidden"
         >
           <p className={styles.sectionSubText}>Get in touch</p>
-          <h3 className={styles.sectionHeadText}>Contact.</h3>
+          <h3 className={styles.sectionHeadText}>Contact</h3>
 
-          <form ref={formRef} onSubmit={handleSubmit}>
-            <div className="flex flex-col gap-8 mt-12">
-              <label htmlFor="name" className="flex flex-col">
-                <span className="text-white font-medium mb-4">Your Name</span>
-                <input
-                  type="text"
-                  id={"name" satisfies FormKeys}
-                  name="name"
-                  autoComplete="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name here"
-                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium transition-all focus-visible:outline-2 focus-visible:outline-secondary"
-                />
-              </label>
-              <label htmlFor="email" className="flex flex-col">
-                <span className="text-white font-medium mb-4">Your Email</span>
-                <input
-                  type="email"
-                  inputMode="email"
-                  autoComplete="email"
-                  id={"email" satisfies FormKeys}
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email here"
-                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium transition-all focus-visible:outline-2 focus-visible:outline-secondary"
-                />
-              </label>
-              <label htmlFor="message" className="flex flex-col">
-                <span className="text-white font-medium mb-4">
-                  Your Message
-                </span>
-                <textarea
-                  rows={7}
-                  id={"message" satisfies FormKeys}
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Enter your message here"
-                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium transition-all focus-visible:outline-2 focus-visible:outline-secondary resize-none"
-                />
-              </label>
+          <div
+            className={`relative overflow-hidden ${
+              requestState !== "success" ? "p-1 m-[-4px]" : ""
+            }`}
+          >
+            <motion.form
+              initial="show"
+              animate={requestState !== "success" ? "show" : "hidden"}
+              variants={slideIn("left", "spring", 0, 0.3)}
+              onSubmit={handleSubmit}
+              className="flex flex-col mt-12"
+            >
+              {inputList.map((input) => (
+                <label
+                  key={input.value}
+                  htmlFor={input.value}
+                  className="flex flex-col"
+                >
+                  <span className="text-white font-medium mb-4">
+                    {`Your ${input.label}`}
+                  </span>
+                  <ErrorContainer error={formErrors[input.value]}>
+                    {input.textArea ? (
+                      <textarea
+                        rows={7}
+                        id={input.value}
+                        name={input.value}
+                        data-has-error={!!formErrors[input.value]}
+                        value={formData[input.value]}
+                        onChange={handleChange}
+                        disabled={requestState === "loading"}
+                        placeholder={`Enter your ${input.value} here`}
+                        className={`${
+                          formErrors[input.value] ? "ring-2 ring-red-500" : ""
+                        } ${styles.input} resize-none`}
+                      />
+                    ) : (
+                      <input
+                        type="text"
+                        inputMode={input.value === "email" ? "email" : "text"}
+                        id={input.value}
+                        name={input.value}
+                        autoComplete={input.value}
+                        value={formData[input.value]}
+                        data-has-error={!!formErrors[input.value]}
+                        onChange={handleChange}
+                        disabled={requestState === "loading"}
+                        placeholder={`Enter your ${input.value} here`}
+                        className={`${
+                          formErrors[input.value] ? "ring-2 ring-red-500" : ""
+                        } ${styles.input}`}
+                      />
+                    )}
+                  </ErrorContainer>
+                </label>
+              ))}
               <button
                 type="submit"
-                className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+                className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl disabled:cursor-progress"
                 disabled={requestState !== "idle"}
               >
                 {requestState === "loading"
@@ -147,10 +195,32 @@ export default function ContactForm() {
                       ? "Sent"
                       : "Send"}
               </button>
-            </div>
-          </form>
+            </motion.form>
+            <motion.div
+              className="absolute inset-0"
+              initial="hidden"
+              animate={requestState === "success" ? "show" : "hidden"}
+              variants={slideIn("right", "spring", 0, 0.3)}
+            >
+              <svg
+                clipRule="evenodd"
+                fillRule="evenodd"
+                strokeLinejoin="round"
+                strokeMiterlimit="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m11.998 2.005c5.517 0 9.997 4.48 9.997 9.997 0 5.518-4.48 9.998-9.997 9.998-5.518 0-9.998-4.48-9.998-9.998 0-5.517 4.48-9.997 9.998-9.997zm0 1.5c-4.69 0-8.498 3.807-8.498 8.497s3.808 8.498 8.498 8.498 8.497-3.808 8.497-8.498-3.807-8.497-8.497-8.497zm-5.049 8.886 3.851 3.43c.142.128.321.19.499.19.202 0 .405-.081.552-.242l5.953-6.509c.131-.143.196-.323.196-.502 0-.41-.331-.747-.748-.747-.204 0-.405.082-.554.243l-5.453 5.962-3.298-2.938c-.144-.127-.321-.19-.499-.19-.415 0-.748.335-.748.746 0 .205.084.409.249.557z"
+                  fillRule="nonzero"
+                  fill="#aaa6c3"
+                />
+              </svg>
+              <p className="mt-4 text-secondary text-[17px] leading-[30px]">
+                {`Thank you for your message, ${formData.name}! I will get back to you shortly.`}
+              </p>
+            </motion.div>
+          </div>
         </motion.div>
-
         <motion.div
           variants={slideIn("right", "tween", 0.2, 1)}
           className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] select-none"
