@@ -161,10 +161,6 @@ const technologies = [
     name: "Jira",
   },
   {
-    icon: Firebase,
-    name: "Firebase",
-  },
-  {
     icon: Ionic,
     name: "Ionic",
   },
@@ -250,6 +246,10 @@ const technologies = [
   {
     icon: Github,
     name: "GitHub",
+  },
+  {
+    icon: Firebase,
+    name: "Firebase",
   },
   {
     icon: AWS,

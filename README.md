@@ -15,8 +15,8 @@ Here, you'll find a collection of projects that I've worked on. Each project inc
 - Programming Languages:
   - HTML5
   - CSS3
-  - TypeScript
   - JavaScript
+  - TypeScript
   - PHP
   - C
   - Python
@@ -24,18 +24,21 @@ Here, you'll find a collection of projects that I've worked on. Each project inc
 - Frameworks/Libraries:
   - React
   - Angular
+  - NextJS
   - Express
   - Bootstrap
   - Tailwind
   - Threejs
+  - Ionic
   - Tanstack/React-Query
   - React-Testing-Library
   - Vite
   - Vitest
   - Axios
-  - Nodejs
+  - NodeJS
   - Express
   - Jest
+  - Firebase
 
 ## Experience
 
