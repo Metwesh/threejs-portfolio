@@ -138,50 +138,53 @@ export default function ContactForm() {
               onSubmit={handleSubmit}
               className="flex flex-col mt-12"
             >
-              {inputList.map((input) => (
-                <label
-                  key={input.value}
-                  htmlFor={input.value}
-                  className="flex flex-col"
-                >
-                  <span className="text-white font-medium mb-4">
-                    {`Your ${input.label}`}
-                  </span>
-                  <ErrorContainer error={formErrors[input.value]}>
-                    {input.textArea ? (
-                      <textarea
-                        rows={7}
-                        id={input.value}
-                        name={input.value}
-                        data-has-error={!!formErrors[input.value]}
-                        value={formData[input.value]}
-                        onChange={handleChange}
-                        disabled={requestState === "loading"}
-                        placeholder={`Enter your ${input.value} here`}
-                        className={`${
-                          formErrors[input.value] ? "ring-2 ring-red-500" : ""
-                        } ${styles.input} resize-none`}
-                      />
-                    ) : (
-                      <input
-                        type="text"
-                        inputMode={input.value === "email" ? "email" : "text"}
-                        id={input.value}
-                        name={input.value}
-                        autoComplete={input.value}
-                        value={formData[input.value]}
-                        data-has-error={!!formErrors[input.value]}
-                        onChange={handleChange}
-                        disabled={requestState === "loading"}
-                        placeholder={`Enter your ${input.value} here`}
-                        className={`${
-                          formErrors[input.value] ? "ring-2 ring-red-500" : ""
-                        } ${styles.input}`}
-                      />
-                    )}
-                  </ErrorContainer>
-                </label>
-              ))}
+              <ErrorContainer error={formErrors.request}>
+                {inputList.map((input) => (
+                  <label
+                    key={input.value}
+                    htmlFor={input.value}
+                    className="flex flex-col"
+                  >
+                    <span className="text-white font-medium mb-4">
+                      {`Your ${input.label}`}
+                    </span>
+                    <ErrorContainer error={formErrors[input.value]}>
+                      {input.textArea ? (
+                        <textarea
+                          rows={7}
+                          id={input.value}
+                          name={input.value}
+                          data-has-error={!!formErrors[input.value]}
+                          value={formData[input.value]}
+                          onChange={handleChange}
+                          disabled={requestState === "loading"}
+                          placeholder={`Enter your ${input.value} here`}
+                          className={`${
+                            formErrors[input.value] ? "ring-2 ring-red-500" : ""
+                          } ${styles.input} resize-none`}
+                        />
+                      ) : (
+                        <input
+                          type="text"
+                          inputMode={input.value === "email" ? "email" : "text"}
+                          id={input.value}
+                          name={input.value}
+                          autoComplete={input.value}
+                          value={formData[input.value]}
+                          data-has-error={!!formErrors[input.value]}
+                          onChange={handleChange}
+                          disabled={requestState === "loading"}
+                          placeholder={`Enter your ${input.value} here`}
+                          className={`${
+                            formErrors[input.value] ? "ring-2 ring-red-500" : ""
+                          } ${styles.input}`}
+                        />
+                      )}
+                    </ErrorContainer>
+                  </label>
+                ))}
+              </ErrorContainer>
+
               <button
                 type="submit"
                 className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl disabled:cursor-progress"
