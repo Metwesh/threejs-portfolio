@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import { personalDescription, services } from "../constants";
 import SectionWrapper from "../container/SectionWrapper";
 import { styles } from "../styles";
@@ -21,15 +21,7 @@ export default function About() {
 
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
-          <Tilt
-            className="xs:w-[250px] w-full"
-            key={service.title}
-            options={{
-              max: 45,
-              scale: 1,
-              speed: 450,
-            }}
-          >
+          <Tilt className="xs:w-[250px] w-full" key={service.title}>
             <motion.div
               variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
               className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import { certificateDescription, certificates } from "../constants";
 import SectionWrapper from "../container/SectionWrapper";
 import { styles } from "../styles";
@@ -24,11 +24,6 @@ export default function Certificates() {
           <Tilt
             className="xs:w-[250px] w-full"
             key={`certificate-${cert.title}-${index}`}
-            options={{
-              max: 45,
-              scale: 1,
-              speed: 450,
-            }}
           >
             <motion.div
               variants={fadeIn("right", "spring", 0.5 * index, 0.75)}

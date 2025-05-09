@@ -4,7 +4,7 @@ import { textVariant, fadeIn } from "../utilities/motion";
 import { styles } from "../styles";
 import { github, linkIcon } from "../assets";
 import { projects, projectsDescription } from "../constants";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 
 export default function Work() {
   return (
@@ -29,14 +29,7 @@ export default function Work() {
             key={`projects-${outerIndex}`}
             variants={fadeIn("up", "spring", 0.5 * outerIndex, 0.75)}
           >
-            <Tilt
-              className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-full"
-              options={{
-                max: 45,
-                scale: 1,
-                speed: 450,
-              }}
-            >
+            <Tilt className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-full">
               <div className="relative w-full h-[230px]">
                 <img
                   src={project.image}
@@ -83,6 +76,20 @@ export default function Work() {
                         src={github}
                         alt="Github"
                         className="w-7 h-7 object-contain"
+                      />
+                    </button>
+                  </div>
+                ) : "demo_link" in project ? (
+                  <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+                    <button
+                      title={`Visit ${project.name} demo`}
+                      onClick={() => window.open(project.demo_link, "_blank")}
+                      className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                    >
+                      <img
+                        src={linkIcon}
+                        alt="Github"
+                        className="w-6 h-6 object-contain"
                       />
                     </button>
                   </div>

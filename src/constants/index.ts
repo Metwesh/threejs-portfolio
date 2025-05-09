@@ -8,6 +8,7 @@ import {
   act,
   sideupWhite,
   sideup,
+  tah,
   bookRentalProject,
   clinicWebsite,
   budgetApp,
@@ -282,12 +283,42 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Frontend Engineer",
+    company_name: "The Address Holding",
+    link: "https://theaddressholding.com/",
+    icon: tah,
+    iconBg: "#383E56",
+    date: "Nov 2024 - Present",
+    points: [
+      {
+        title: "Internal system development",
+        subtitle:
+          "Built and maintained CRMs and HRMs using Next.js, focusing on performance, scalability, and maintainability.",
+      },
+      {
+        title: "Project ownership",
+        subtitle:
+          "Spearheaded development of a property listing e-commerce website, authoring 85%+ of the production code.",
+      },
+      {
+        title: "SEO optimization",
+        subtitle:
+          "Implemented server-side rendering and dynamic routing to maximize organic visibility and meet SEO best practices.",
+      },
+      {
+        title: "Cross-functional collaboration",
+        subtitle:
+          "Worked closely with designers and backend teams to ensure seamless UI/UX and reliable system integration.",
+      },
+    ],
+  },
+  {
     title: "Senior Frontend Engineer",
     company_name: "SIDEUP",
     link: "https://eg.sideup.co/",
-    icon: sideupWhite,
-    iconBg: "#383E56",
-    date: "Dec 2023 - Present",
+    icon: sideup,
+    iconBg: "#E6DEDD",
+    date: "Dec 2023 - Nov 2024",
     points: [
       {
         title: "Led and mentored junior engineers",
@@ -315,8 +346,8 @@ const experiences = [
     title: "Frontend Engineer",
     company_name: "SIDEUP",
     link: "https://eg.sideup.co/",
-    icon: sideup,
-    iconBg: "#E6DEDD",
+    icon: sideupWhite,
+    iconBg: "#383E56",
     date: "Feb 2023 - Dec 2023",
     points: [
       {
@@ -346,7 +377,7 @@ const experiences = [
     company_name: "Advanced Computer Technologies (ACT)",
     link: "https://www.act.eg/",
     icon: act,
-    iconBg: "#383E56",
+    iconBg: "#E6DEDD",
     date: "Feb 2022 - Feb 2023",
     points: [
       {
@@ -534,7 +565,6 @@ const projects = [
       },
     ],
     image: taskHandlerApp,
-
     source_code_link: "https://github.com/Metwesh/task-handler",
   },
   {
@@ -636,6 +666,7 @@ const projects = [
       },
     ],
     image: amanDashboard,
+    demo_link: "https://www.amanaccept.com/",
   },
   {
     name: "SIDEUP Dashboard v3",
@@ -728,6 +759,7 @@ const projects = [
       },
     ],
     image: beltoneHolding,
+    demo_link: "https://www.beltoneholding.com/",
   },
   {
     name: "D'Art Space Art Store",

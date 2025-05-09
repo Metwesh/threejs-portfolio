@@ -59,6 +59,7 @@ import WIP from "./technologies/Under-Construction.svg";
 import act from "./companies/ACT.svg";
 import sideup from "./companies/sideup.svg";
 import sideupWhite from "./companies/sideup-white.svg";
+import tah from "./companies/tah.svg";
 
 // Projects
 import bookRentalProject from "./projects/Graduation Website.webp";
@@ -101,6 +102,7 @@ export {
   linkIcon,
   sideupWhite,
   act,
+  tah,
   bookRentalProject,
   clinicWebsite,
   budgetApp,
