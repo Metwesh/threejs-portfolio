@@ -9,6 +9,10 @@
     />
     <title>Metwesh | Portfolio</title>
 
+    <!-- Permanent redirect to new portfolio URL -->
+    <link rel="canonical" href="https://metwesh.github.io/portfolio/" />
+    <meta http-equiv="refresh" content="0; url=https://metwesh.github.io/portfolio/" />
+
     <meta
       name="description"
       content="Mohamed H. Aly's collection of projects"
@@ -29,7 +33,12 @@
   <link rel="manifest" href="/threejs-portfolio/manifest.webmanifest"></head>
 
   <body>
-    <div id="root"></div>
+    <!-- If not redirected, show fallback -->
+    <div id="root">
+      <noscript>
+        <p>This site has moved to <a href="https://metwesh.github.io/portfolio/">https://metwesh.github.io/portfolio/</a></p>
+      </noscript>
+    </div>
     
   </body>
 </html>
